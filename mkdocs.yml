@@ -1,0 +1,36 @@
+site_name: LEO CDP Documentation
+site_description: AI-driven Customer Data Platform
+site_url: https://leocdp.com/docs/
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+    - content.images
+  palette:
+    scheme: slate
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+  - to-pdf
+
+nav:
+  - Overview: index.md
+  - Architecture: architecture.md
+  - Activation Engine: activation.md
+  - API Reference: api.md
+  - Tutorials:
+      - Getting Started: tutorials/getting_started.md
+      - Advanced Features: tutorials/advanced_features.md
+  - FAQ: faq.md
+  - Changelog: changelog.md

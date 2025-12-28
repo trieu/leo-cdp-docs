@@ -1,0 +1,1217 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI-driven Customer Data Platform">
+      
+      
+      
+        <link rel="canonical" href="https://leocdp.com/docs/">
+      
+      
+      
+        <link rel="next" href="architecture/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>LEO CDP Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#leo-cdp" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="LEO CDP Documentation" class="md-header__button md-logo" aria-label="LEO CDP Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LEO CDP Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="activation/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Activation Engine
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="api/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  API Reference
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="tutorials/getting_started/" class="md-tabs__link">
+          
+  
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="changelog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="LEO CDP Documentation" class="md-nav__button md-logo" aria-label="LEO CDP Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LEO CDP Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#an-open-source-ai-first-customer-data-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        An Open-Source, AI-First Customer Data Platform
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vision-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Vision &amp; Philosophy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔥 Core Capabilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔥 Core Capabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-omnichannel-data-collection-unification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Omnichannel Data Collection &amp; Unification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-real-time-customer-360" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Real-Time Customer 360
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ai-driven-segmentation-scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. AI-Driven Segmentation &amp; Scoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-behavioral-tracking-journey-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Behavioral Tracking &amp; Journey Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-predictive-analytics-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Predictive Analytics &amp; Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-personalization-activation-agentic-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Personalization &amp; Activation (Agentic AI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-event-driven-architecture-with-etl-elt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Event-Driven Architecture with ETL / ELT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-api-first-plugin-oriented-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. API-First &amp; Plugin-Oriented Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-data-governance-privacy-by-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Data Governance &amp; Privacy by Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-devops-ready-by-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. DevOps-Ready by Default
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roadmap-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📈 Roadmap (2026+)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technology-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Technology Stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="activation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activation Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorials/getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorials/advanced_features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#an-open-source-ai-first-customer-data-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        An Open-Source, AI-First Customer Data Platform
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vision-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Vision &amp; Philosophy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔥 Core Capabilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔥 Core Capabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-omnichannel-data-collection-unification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Omnichannel Data Collection &amp; Unification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-real-time-customer-360" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Real-Time Customer 360
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ai-driven-segmentation-scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. AI-Driven Segmentation &amp; Scoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-behavioral-tracking-journey-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Behavioral Tracking &amp; Journey Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-predictive-analytics-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Predictive Analytics &amp; Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-personalization-activation-agentic-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Personalization &amp; Activation (Agentic AI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-event-driven-architecture-with-etl-elt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Event-Driven Architecture with ETL / ELT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-api-first-plugin-oriented-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. API-First &amp; Plugin-Oriented Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-data-governance-privacy-by-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Data Governance &amp; Privacy by Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-devops-ready-by-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. DevOps-Ready by Default
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roadmap-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📈 Roadmap (2026+)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technology-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Technology Stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div style="background-color: #F0F8FF; text-align:center; border-radius:8px;">
+  <img src="https://gcore.jsdelivr.net/gh/USPA-Technology/leo-cdp-static-files@latest//images/leo-cdp-logo.png"
+       alt="LEO CDP framework"
+       style="width:640px;margin:auto;" />
+</div>
+
+<h1 id="leo-cdp">LEO CDP</h1>
+<h3 id="an-open-source-ai-first-customer-data-platform">An Open-Source, AI-First Customer Data Platform</h3>
+<p><strong>LEO CDP</strong> is an <strong>open-source, AI-first Customer Data Platform (CDP)</strong> designed to help organizations build, own, and operate their <strong>customer intelligence infrastructure</strong> with full control over data, models, and execution.</p>
+<p>Built with <strong>machine learning, big data, and event-driven architecture at its core</strong>, LEO CDP enables unified data collection, real-time analytics, intelligent segmentation, and AI-powered activation—while remaining <strong>self-hosted, extensible, and privacy-respecting by design</strong>.</p>
+<p>LEO CDP is engineered for <strong>developers, data engineers, data scientists, and modern marketing teams</strong> who require flexibility, transparency, and long-term scalability beyond closed SaaS platforms.</p>
+<div style="background-color: #F0F8FF; text-align:center; border-radius:8px;">
+  <img src="https://gcore.jsdelivr.net/gh/trieu/leo-cdp-framework@latest/core-leo-cdp/ai-first-customer360.png"
+       alt="LEO CDP Customer 360 Architecture" />
+</div>
+
+<hr />
+<h2 id="vision-philosophy">🚀 Vision &amp; Philosophy</h2>
+<p>LEO CDP is grounded in a clear philosophical direction:</p>
+<ul>
+<li><strong>From Dataism → USPA → LEO CDP</strong>: data as a first-class asset, intelligence as a system capability  </li>
+<li>Democratize <strong>AI-powered data platforms</strong> for real digital transformation  </li>
+<li>Promote <strong>data sovereignty</strong>, <strong>on-premise intelligence</strong>, and <strong>open collaboration</strong>  </li>
+<li>Shift from rule-based marketing to <strong>agentic, intent-driven customer engagement</strong></li>
+</ul>
+<p>LEO CDP is not just a tool—it is an <strong>architectural framework</strong> for long-term customer intelligence.</p>
+<hr />
+<h2 id="core-capabilities">🔥 Core Capabilities</h2>
+<h3 id="1-omnichannel-data-collection-unification">1. Omnichannel Data Collection &amp; Unification</h3>
+<p>Ingest customer data from web, mobile, CRM, POS, IoT, social platforms, and APIs. Normalize and unify events into a consistent, extensible data model.</p>
+<h3 id="2-real-time-customer-360">2. Real-Time Customer 360</h3>
+<p>Construct a continuously updated customer profile combining behavioral, transactional, and contextual data across all touchpoints.</p>
+<h3 id="3-ai-driven-segmentation-scoring">3. AI-Driven Segmentation &amp; Scoring</h3>
+<p>Apply clustering, RFM analysis, CLV prediction, churn detection, and dynamic audience generation using machine learning models.</p>
+<h3 id="4-behavioral-tracking-journey-mapping">4. Behavioral Tracking &amp; Journey Mapping</h3>
+<p>Track fine-grained user actions in real time and model customer journeys across channels and devices.</p>
+<h3 id="5-predictive-analytics-insights">5. Predictive Analytics &amp; Insights</h3>
+<p>Build and operate ML pipelines using Python, Jupyter, or Colab to generate actionable insights directly from CDP data.</p>
+<h3 id="6-personalization-activation-agentic-ai">6. Personalization &amp; Activation (Agentic AI)</h3>
+<p>Leverage agentic AI to orchestrate personalized experiences across email, push notifications, SMS, and content delivery—driven by customer intent rather than static rules.</p>
+<h3 id="7-event-driven-architecture-with-etl-elt">7. Event-Driven Architecture with ETL / ELT</h3>
+<p>Native support for event-based ingestion and transformation, with Apache Airflow integration for orchestration at scale.</p>
+<h3 id="8-api-first-plugin-oriented-design">8. API-First &amp; Plugin-Oriented Design</h3>
+<p>Modular, extensible services with clean REST APIs—designed for integration, automation, and customization.</p>
+<h3 id="9-data-governance-privacy-by-design">9. Data Governance &amp; Privacy by Design</h3>
+<p>Built-in consent management, GDPR alignment, and on-premise deployment options to ensure full ownership and compliance.</p>
+<h3 id="10-devops-ready-by-default">10. DevOps-Ready by Default</h3>
+<p>Containerized deployment, observability with Prometheus and Grafana, and a scalable microservice architecture suitable for enterprise environments.</p>
+<hr />
+<h2 id="roadmap-2026">📈 Roadmap (2026+)</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Core CDP Platform (Profiles, Events, Segmentation)</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>CDP SDKs (JavaScript, Python)</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>SSO Integration with Keycloak</td>
+<td>✅ Complete</td>
+</tr>
+<tr>
+<td>AI Assistant for Audience Insights &amp; Recommendations</td>
+<td>🔄 In Progress</td>
+</tr>
+<tr>
+<td>Knowledge Graph + Vector-Based Matching</td>
+<td>🔄 In Progress</td>
+</tr>
+<tr>
+<td>Agentic AI for Personalized Customer Experiences</td>
+<td>🔄 In Progress</td>
+</tr>
+<tr>
+<td>Webhooks &amp; Event Bus Integration (Kafka)</td>
+<td>🆕 Planned</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="technology-stack">🛠️ Technology Stack</h2>
+<ul>
+<li><strong>Backend</strong>: Java 11 (Amazon Corretto), Python 3.10  </li>
+<li><strong>Databases</strong>:  </li>
+<li>ArangoDB 3.11.14 (Multi-model: Document, Graph, Search)  </li>
+<li><strong>Data Pipeline</strong>: Apache Airflow  </li>
+<li><strong>Messaging &amp; Caching</strong>: Redis 8  </li>
+<li><strong>Monitoring &amp; Observability</strong>: Prometheus 2, Grafana 8  </li>
+<li><strong>Deployment</strong>: Ubuntu 22 LTS, Docker, On-Premise or Cloud</li>
+</ul>
+<hr />
+<p>LEO CDP is built for teams who believe that <strong>customer intelligence should be owned, explainable, and evolvable</strong>—not locked inside opaque platforms.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.images"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
